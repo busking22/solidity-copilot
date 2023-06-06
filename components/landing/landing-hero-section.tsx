@@ -7,7 +7,7 @@ import CtaButton from "./cta-btn"
 const LandingHeroSection = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <section ref={ref}>
-      <div className="container flex min-h-[88vh] max-w-5xl flex-col items-center justify-center gap-8 text-center">
+      <div className="container flex min-h-[88vh] max-w-7xl flex-col items-center justify-center gap-8 text-center">
         <div className="flex flex-col gap-2 md:flex-row">
           <TypographyH1 className="bg-gradient-to-r from-indigo-300 via-sky-500 to-indigo-300 bg-clip-text text-transparent">
             Smart Contract Auditing

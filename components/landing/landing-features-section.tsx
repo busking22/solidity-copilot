@@ -54,7 +54,7 @@ const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <section ref={ref}>
-      <div className="container my-40 flex max-w-5xl flex-col items-center gap-6">
+      <div className="container my-40 flex max-w-7xl flex-col items-center gap-6">
         <TypographyH4>Features</TypographyH4>
         <div className="flex flex-col items-center gap-2 text-center">
           <TypographyH2>
