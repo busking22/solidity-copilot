@@ -13,7 +13,7 @@ const LandingHeader = () => {
 
   return (
     <header className="top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-20 max-w-5xl items-center">
+      <div className="container flex h-20 max-w-7xl items-center">
         <div className="flex grow-[2] flex-row items-center justify-start">
           <LogoWithLetter className="h-12" />
         </div>
