@@ -3,7 +3,11 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -11,25 +15,6 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
-    },
-    fontFamily: {
-      sans: [
-        "Pretendard Variable",
-        "Pretendard",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "system-ui",
-        "Roboto",
-        "Helvetica Neue",
-        "Segoe UI",
-        "Apple SD Gothic Neo",
-        "Noto Sans KR",
-        "Malgun Gothic",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "sans-serif",
-      ],
     },
     extend: {
       colors: {
