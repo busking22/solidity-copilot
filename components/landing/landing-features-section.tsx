@@ -1,5 +1,9 @@
 import React, { forwardRef } from "react"
-import ReactPlayer from "react-player"
+import Image, { StaticImageData } from "next/image"
+import Link from "next/link"
+import audit_img from "@/assets/audit.png"
+import gas_img from "@/assets/gas.png"
+import test_img from "@/assets/test.png"
 
 import { cn } from "@/lib/utils"
 import {
@@ -12,7 +16,7 @@ import {
 interface FeatureType {
   title: string
   description_list: string[]
-  video_url?: string
+  image?: string
 }
 
 const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
@@ -40,6 +44,7 @@ const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
         "Eliminates the need for manually checking functions",
         "Ensures proper organized structure for files ",
       ],
+      image: process.env.NEXT_PUBLIC_SITE_URL + "/image/testcode.png",
     },
     {
       title: "Gas Fee Checking",
@@ -48,6 +53,7 @@ const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
         "Streamlines the process of checking gas consumption",
         "Optimizes gas usage and efficiency in smart contracts",
       ],
+      image: process.env.NEXT_PUBLIC_SITE_URL + "/image/gas.png",
     },
   ]
 
@@ -55,30 +61,52 @@ const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
     <section ref={ref}>
       <div className="container my-40 flex max-w-5xl flex-col items-center gap-6">
         <TypographyH4>Features</TypographyH4>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 text-center">
           <TypographyH2>
             Streamlined code audit and refactoring solution
           </TypographyH2>
-          <TypographyMuted className="text-lg">
+          <TypographyMuted className="text-center text-lg">
             Take your smart contract development to the next level with our
             powerful tool that offers one-click auditing, refactoring, test code
             generation, and gas fee optimization.
           </TypographyMuted>
         </div>
-        <div className="mt-24 grid grid-cols-2 gap-24">
+        <div>
+          <Image src={audit_img} alt="audit" className="mt-12" />
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-24 md:grid-cols-2">
           {features.map((feature, index) => (
             <div
               key={index}
               className="space-y-8 md:grid-cols-2 md:space-x-8 md:space-y-0"
             >
-              <TypographyH4 className="text-center">
-                {feature.title}
-              </TypographyH4>
-              <TypographyList>
-                {feature.description_list?.map((description, index) => (
-                  <li key={index}>{description}</li>
-                ))}
-              </TypographyList>
+              {/* {feature.image && (
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto" }} // optional
+                  />
+                </div>
+              )} */}
+              <div
+                className={cn(
+                  "flex flex-col items-center justify-center",
+                  index % 2 == 0 && "md:-order-1"
+                )}
+              >
+                <TypographyH4 className="text-center">
+                  {feature.title}
+                </TypographyH4>
+                <TypographyList>
+                  {feature.description_list?.map((description, index) => (
+                    <li key={index}>{description}</li>
+                  ))}
+                </TypographyList>
+              </div>
             </div>
           ))}
         </div>

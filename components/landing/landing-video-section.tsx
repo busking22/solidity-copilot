@@ -1,12 +1,7 @@
 import { forwardRef } from "react"
-import dynamic from "next/dynamic"
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 
-// import ReactPlayer from "react-player"
-
 import { TypographyH4 } from "../ui/typography"
-
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false })
 
 const LandingVideoDemoSection = forwardRef<HTMLDivElement>((_, ref) => {
   return (
