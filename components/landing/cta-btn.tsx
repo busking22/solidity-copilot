@@ -6,7 +6,9 @@ import { Button, ButtonProps } from "../ui/button"
 const CtaButton = ({ className, variant, ...props }: ButtonProps) => {
   return (
     <Button className={className} variant={variant} {...props}>
-      <Link href="/auth">Get Early Access</Link>
+      <Link href="https://tally.so/r/3XrBbL" target="_blank">
+        Get Early Access
+      </Link>
     </Button>
   )
 }

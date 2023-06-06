@@ -12,51 +12,73 @@ import {
 interface FeatureType {
   title: string
   description_list: string[]
-  video_url: string
+  video_url?: string
 }
 
 const LandingFeaturesSection = forwardRef<HTMLDivElement>((_, ref) => {
-  const features: FeatureType[] = []
+  const features: FeatureType[] = [
+    {
+      title: "Smart Contract Auditing",
+      description_list: [
+        "Auditing in 1 minute",
+        "One-click auditing process",
+        "Identifies security issues and provides solutions",
+      ],
+    },
+    {
+      title: "Code Refactoring",
+      description_list: [
+        "Automatic code refactoring with GPT4",
+        "Simple visualization to easily review changes to code",
+        "Provides comments and logic for changes ",
+      ],
+    },
+    {
+      title: "Test Code Generation",
+      description_list: [
+        "Automatically generates test codes",
+        "Eliminates the need for manually checking functions",
+        "Ensures proper organized structure for files ",
+      ],
+    },
+    {
+      title: "Gas Fee Checking",
+      description_list: [
+        "Checks gas fees with one click",
+        "Streamlines the process of checking gas consumption",
+        "Optimizes gas usage and efficiency in smart contracts",
+      ],
+    },
+  ]
+
   return (
     <section ref={ref}>
       <div className="container my-40 flex max-w-7xl flex-col items-center gap-6">
-        <TypographyH4>features.features</TypographyH4>
+        <TypographyH4>Features</TypographyH4>
         <div className="flex flex-col items-center gap-2">
-          <TypographyH2>features.title</TypographyH2>
+          <TypographyH2>
+            Streamlined code audit and refactoring solution
+          </TypographyH2>
           <TypographyMuted className="text-lg">
-            features.description
+            Take your smart contract development to the next level with our
+            powerful tool that offers one-click auditing, refactoring, test code
+            generation, and gas fee optimization.
           </TypographyMuted>
         </div>
-        <div className="mt-24 flex flex-col space-y-24 md:space-y-36">
+        <div className="mt-24 grid grid-cols-2 gap-24">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="grid grid-cols-1 space-y-8 md:grid-cols-2 md:space-x-8 md:space-y-0"
+              className="space-y-8 md:grid-cols-2 md:space-x-8 md:space-y-0"
             >
-              <div>
-                <ReactPlayer
-                  width="100%"
-                  height="100%"
-                  url={feature.video_url}
-                  loop
-                  muted
-                />
-              </div>
-              <div
-                className={cn(
-                  "flex flex-col items-center justify-center",
-                  index % 2 == 0 && "md:-order-1"
-                )}
-              >
-                <TypographyH4 className="text-center">
-                  {feature.title}
-                </TypographyH4>
-                <TypographyList>
-                  {feature.description_list?.map((description, index) => (
-                    <li key={index}>{description}</li>
-                  ))}
-                </TypographyList>
-              </div>
+              <TypographyH4 className="text-center">
+                {feature.title}
+              </TypographyH4>
+              <TypographyList>
+                {feature.description_list?.map((description, index) => (
+                  <li key={index}>{description}</li>
+                ))}
+              </TypographyList>
             </div>
           ))}
         </div>

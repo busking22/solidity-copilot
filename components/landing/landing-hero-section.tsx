@@ -10,23 +10,25 @@ const LandingHeroSection = forwardRef<HTMLDivElement>((_, ref) => {
       <div className="container flex min-h-[88vh] max-w-5xl flex-col items-center justify-center gap-8 text-center">
         <div className="flex flex-row gap-2">
           <TypographyH1 className="bg-gradient-to-r from-indigo-300 via-sky-500 to-indigo-300 bg-clip-text text-transparent">
-            HERO TITLE
+            Smart Contract Auditing
           </TypographyH1>
           <TypeAnimation
             sequence={[
-              `t("hero.title-typing1")`,
+              "",
               2000,
-              `t("hero.title-typing2")`,
+              " in 1 minute",
               2000,
-              `t("hero.title-typing3")`,
+              " in 1 minute",
               2000,
-              `t("hero.title-typing4")`,
+              " in 1 minute",
             ]}
             className="scroll-m-20 text-4xl font-extrabold tracking-tight text-indigo-300 lg:text-5xl"
           />
         </div>
         <TypographyH4 className="whitespace-pre-line">
-          `qkwejfkqwfej`
+          {`Audit your smart contract and dapp in one click with the power of GPT4
+          on VSCode. Identify security issues and immediately refactor your code
+          to make a secure, reliable, and accessbile dapp.`}
         </TypographyH4>
         <CtaButton />
       </div>
